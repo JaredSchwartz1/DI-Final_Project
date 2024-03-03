@@ -1,0 +1,2 @@
+const manager = new ScreenManager();
+
