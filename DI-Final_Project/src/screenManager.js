@@ -1,4 +1,4 @@
-class ScreenManager {
+export class ScreenManager {
     constructor() {
         this.screens = {};
         this.currentScreen = null;
@@ -23,18 +23,3 @@ class ScreenManager {
         }
     }
 }
-
-// Example screen class
-
-// Example usage:
-
-
-// Register screens
-const screen1 = new Screen("Screen 1");
-const screen2 = new Screen("Screen 2");
-manager.registerScreen("screen1", screen1);
-manager.registerScreen("screen2", screen2);
-
-// Switch between screens
-manager.switchScreen("screen1"); // This will show Screen 1
-manager.switchScreen("screen2"); // This will hide Screen 1 and show Screen 2

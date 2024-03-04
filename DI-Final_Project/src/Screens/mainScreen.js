@@ -1,6 +1,9 @@
-class mainScreen extends Screen{
+import{ 
+    manager 
+}from '../Dependencies.js';
+export class mainScreen{
 constructor(name){
-    super(name)
+    this.name=name
 }
 show(){
     

@@ -1,6 +1,6 @@
-class shoppingListScreen extends Screen{
+export class shoppingListScreen{
 constructor(name){
-    super(name)
+    this.name=name
 }
 show() {
 }

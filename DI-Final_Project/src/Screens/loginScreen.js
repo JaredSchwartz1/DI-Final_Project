@@ -1,6 +1,6 @@
-class loginScreen extends Screen{
+export class loginScreen{
 constructor(name){
-    super(name)
+    this.name=name
 }
 show() {
 

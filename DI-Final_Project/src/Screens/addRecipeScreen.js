@@ -1,6 +1,6 @@
-class addRecipeScreen extends Screen{
+export class addRecipeScreen{
 constructor(name){
-    super(name)
+    this.name=name
 }
 show() {
 }

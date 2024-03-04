@@ -1,6 +1,6 @@
-class registerScreen extends Screen{
+export class registerScreen{
     constructor(name){
-        super(name)
+        this.name=name
     }
     show() {
     

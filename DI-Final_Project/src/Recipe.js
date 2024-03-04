@@ -1,4 +1,4 @@
-class Recipe{
+export class Recipe{
     constructor(name,author,steps,ingredients,prepTime,cookTime,catergory){
 this.name=name
 this.author=author

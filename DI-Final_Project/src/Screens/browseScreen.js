@@ -1,6 +1,6 @@
-class browseScreen extends Screen{
+export class browseScreen{
 constructor(name){
-    super(name)
+    this.name=name
 }
 show() {
 }
