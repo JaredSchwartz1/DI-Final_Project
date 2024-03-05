@@ -19,4 +19,5 @@ manager.registerScreen('login', loginscreen)
 manager.registerScreen('main', mainscreen)
 manager.registerScreen('register', registerscreen)
 
-homescreen.show()
+manager.switchScreen('home')
+//mainscreen.show()//this is supposed to be homescreen but since I am working on main screen i made it that. 

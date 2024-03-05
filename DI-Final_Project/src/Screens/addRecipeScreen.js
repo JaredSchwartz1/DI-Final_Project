@@ -3,6 +3,7 @@ constructor(name){
     this.name=name
 }
 show() {
+    
 }
 
 

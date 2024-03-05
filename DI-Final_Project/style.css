@@ -1,9 +1,30 @@
 #screenDiv{
     width:99vw;
-    height:99vh;
+    height:99vh; 
+}
+
+.divHomeScreen{
     background-color: burlywood;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.divMainScreen{
+    background-color: rgb(66, 193, 15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#browseDiv{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+#addRecipe{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(223, 17, 17);
 }
