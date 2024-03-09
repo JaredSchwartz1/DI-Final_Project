@@ -7,36 +7,35 @@ constructor(name){
     this.name=name
 }
 show(){
-    console.log('yay')
     let screenDiv = document.getElementById('screenDiv')
         screenDiv.classList.add('divMainScreen')
-elementCreation('div',screenDiv,'browseDiv')
-elementCreation('div',screenDiv,'addRecipe')
+
+let browseDiv=elementCreation('div',screenDiv,null,'browseDiv',['click', ()=>{manager.switchScreen('browse')}])
+elementCreation('h1',browseDiv,'Browse Recipes')
+
+let addRecipeDiv=elementCreation('div',screenDiv,null,'addRecipeDiv')
+elementCreation('h1',addRecipeDiv,'Add a recipe')
+
+let shoppingListDiv=elementCreation('div',screenDiv,null,'shoppingListDiv')
+elementCreation('h1',shoppingListDiv,'Make a shopping list')
+
+let favoritesDiv=elementCreation('div',screenDiv,null,'favoritesDiv')
+elementCreation('h1',favoritesDiv,'Favorites')
 
 
+elementCreation('button',screenDiv,'Log Out',null,['click', ()=>{manager.switchScreen('home')}],['type','button'])
 
-// let div=document.createElement('div')
-// let div=document.createElement('div')
-// let div=document.createElement('div')
-// let div=document.createElement('div')
-// let div=document.createElement('div')
 
-elementCreation('button',screenDiv,null,'Log Out')
-// let logOutButton=document.createElement('button')
-// let logOutButtonText=document.createTextNode('Log Out')
-// logOutButton.appendChild(logOutButtonText)
-// screenDiv.appendChild(logOutButton)
-
-        let divChildren=screenDiv.querySelectorAll('*');
-        for(let i of divChildren){
-        i.classList.add('mainScreenElement')
-    }
+    //     let divChildren=screenDiv.querySelectorAll('*');
+    //     for(let i of divChildren){
+    //     i.classList.add('mainScreenElement')
+    // }
 }
 
 
 hide() {
-    for(let i of document.getElementsByClassName('mainScreenElement')){
-        console.log(document.getElementsByClassName('mainScreenElement'))
+    let divChildren=screenDiv.querySelectorAll('*');
+    for(let i of divChildren){
         i.remove()
     }
     screenDiv.classList.remove('divMainScreen')

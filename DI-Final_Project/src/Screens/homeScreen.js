@@ -12,35 +12,17 @@ export class homeScreen {
         let screenDiv = document.getElementById('screenDiv')
         screenDiv.classList.add('divHomeScreen')
 
-        elementCreation('h1',screenDiv,null,'The Recipe Reserve')
+        elementCreation('h1',screenDiv,'The Recipe Reserve')
         
-        // let title = document.createElement('h1')
-        // let titleText = document.createTextNode('The Recipe Reserve')
-        // title.appendChild(titleText)
-        // screenDiv.appendChild(title)
+        elementCreation('h2',screenDiv,'The home of your next delicious meal')
 
-        let subtitle = document.createElement('h2')
-        let subtitleText = document.createTextNode('The home of your next delicious meal recipe.')
-        subtitle.appendChild(subtitleText)
-        screenDiv.appendChild(subtitle)
+        elementCreation('button',screenDiv,'Sign Up','register',['click', ()=>{manager.switchScreen('register')}],['type','button'])
 
-        let signUpButton = document.createElement('button')
-        let signUpButtonText = document.createTextNode('Sign Up')
-        signUpButton.appendChild(signUpButtonText)
-        signUpButton.setAttribute('type', 'button')
-        signUpButton.addEventListener('click', ()=>{manager.switchScreen('register')})
-        screenDiv.appendChild(signUpButton)
+        elementCreation('button',screenDiv,'Login','login',['click', ()=>{manager.switchScreen('main')}],['type','button'])//for now have this as main screen but remember to change it back to log in.
 
-        let loginButton = document.createElement('button')
-        let loginButtonText = document.createTextNode('Login')
-        loginButton.appendChild(loginButtonText)
-        loginButton.setAttribute('type', 'button')
-        loginButton.addEventListener('click', ()=>{manager.switchScreen('main')})//for now have this as main screen but remember to change it back to log in.
-        screenDiv.appendChild(loginButton)
-              
-        // let divChildren=screenDiv.querySelectorAll('*');
-        // for(let i of divChildren){
-        // i.classList.add('homeScreenElement')
+         //     let divChildren=screenDiv.querySelectorAll('*');
+    //     for(let i of divChildren){
+    //     i.classList.add('homeScreenElement')
     // }
 }
 

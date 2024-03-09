@@ -1,6 +1,6 @@
 #screenDiv{
-    width:99vw;
-    height:99vh; 
+    width:100vw;
+    height:100vh; 
 }
 
 .divHomeScreen{
@@ -14,17 +14,43 @@
 .divMainScreen{
     background-color: rgb(66, 193, 15);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
 #browseDiv{
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: 300px;
     background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-#addRecipe{
+#addRecipeDiv{
+    width: 300px;
+   height: 300px;
+    background-color: rgb(223, 17, 17);
+}
+#shoppingListDiv{
+    width: 300px;
+    height: 300px;
+    background-color: rgb(115, 83, 155);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#favoritesList{
     width: 100px;
     height: 100px;
-    background-color: rgb(223, 17, 17);
+    background-color: yellow;
+}
+
+.divBrowseScreen{
+    background-color:rgb(62, 38, 158) ;
+}
+#displayDiv{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
 }
