@@ -37,7 +37,7 @@ export class browseScreen {
                     index += 12
                     for (let i = index; i < (arr.length); i++) {
                         const Recipe=arr[i]
-                    elementCreation('div', displayDiv, Recipe.name, `${Recipe.name}`, ['click', () => {manager.switchScreen('view',recipe)}], ['style', 'background:grey;', 'class', 'onScreen'])
+                    elementCreation('div', displayDiv, Recipe.name, `${Recipe.name}`, ['click', () => {manager.switchScreen('view',Recipe)}], ['style', 'background:grey;', 'class', 'onScreen'])
                     }
                     for (let i = (arr.length - index); i < 12; i++) {
                         elementCreation('div', displayDiv, null, null, null, ['class', 'holder','class','onScreen'])
@@ -54,8 +54,8 @@ export class browseScreen {
                     }
                     index += 12
                     for (let i = index; i < (index + 12); i++) {
-                        const recipe=arr[i]
-                    elementCreation('div', displayDiv, recipe.name, `${recipe.name}`, ['click', () => {manager.switchScreen('view',recipe)}], ['style', 'background:grey;', 'class', 'onScreen'])
+                        const Recipe=arr[i]
+                    elementCreation('div', displayDiv, Recipe.name, `${Recipe.name}`, ['click', () => {manager.switchScreen('view',Recipe)}], ['style', 'background:grey;', 'class', 'onScreen'])
                     }
                     current = index;
                     elementCreation('button', displayDiv, 'previous', 'previous', ['click', () => { display(current, recipes, 'back') }], ['type', 'button', 'style', 'grid-column:span 2;','class', 'onScreen'])
@@ -74,8 +74,8 @@ export class browseScreen {
                 }
                     index -= 12
                     for (let i = index; i < (index + 12); i++) {
-                        const recipe=arr[i]
-                        elementCreation('div', displayDiv, recipe.name, `${recipe.name}`, ['click', () => {manager.switchScreen('view',recipe)}], ['style', 'background:grey;', 'class', 'onScreen'])
+                        const Recipe=arr[i]
+                        elementCreation('div', displayDiv, Recipe.name, `${Recipe.name}`, ['click', () => {manager.switchScreen('view',Recipe)}], ['style', 'background:grey;', 'class', 'onScreen'])
                     }
                     current = index;
                     elementCreation('button', displayDiv, 'previous', 'previous', ['click', () => { display(current, recipes, 'back') }], ['type', 'button', 'style', 'grid-column:span 2;', 'class', 'onScreen'])
@@ -88,8 +88,8 @@ export class browseScreen {
                 }
                     index -= 12
                     for (let i = index; i < (index + 12); i++) {
-                        const recipe=arr[i]
-                        elementCreation('div', displayDiv, recipe.name, `${recipe.name}`, ['click', () => {manager.switchScreen('view',recipe)}], ['style', 'background:grey;', 'class', 'onScreen'])
+                        const Recipe=arr[i]
+                        elementCreation('div', displayDiv, Recipe.name, `${Recipe.name}`, ['click', () => {manager.switchScreen('view',Recipe)}], ['style', 'background:grey;', 'class', 'onScreen'])
                     }
                     current = index;
                     elementCreation('button', displayDiv, 'previous', 'previous', ['click', () => { display(current, recipes, 'back') }], ['type', 'button', 'style', 'grid-column:span 2;', 'class', 'onScreen'])
@@ -104,8 +104,8 @@ export class browseScreen {
                 if (Math.min((arr.length - index), (index + 12)) == (arr.length - index)) {
                     index += 12
                     for (let i = 0; i < (arr.length); i++) {
-                        const recipe=arr[i]
-                        elementCreation('div', displayDiv, recipe.name, `${recipe.name}`, ['click', () => {manager.switchScreen('view',recipe)}], ['style', 'background:grey;', 'class', 'onScreen'])
+                        const Recipe=arr[i]
+                        elementCreation('div', displayDiv, Recipe.name, `${Recipe.name}`, ['click', () => {manager.switchScreen('view',Recipe)}], ['style', 'background:grey;', 'class', 'onScreen'])
                     }
                     for (let i = arr.length; i < 12; i++) {
                         elementCreation('div', displayDiv, null, null, null, ['class', 'holder','class','onScreen'])
@@ -120,8 +120,8 @@ export class browseScreen {
                     recipesArr[i].remove()
                 }
                     for (let i = index; i < (index + 12); i++) {
-                        const recipe=arr[i]
-                        elementCreation('div', displayDiv, recipe.name, `${recipe.name}`, ['click', () => {manager.switchScreen('view',recipe)}], ['style', 'background:grey;', 'class', 'onScreen'])
+                        const Recipe=arr[i]
+                        elementCreation('div', displayDiv, Recipe.name, `${Recipe.name}`, ['click', () => {manager.switchScreen('view',Recipe)}], ['style', 'background:grey;', 'class', 'onScreen'])
                     }
                     current = index;
                     elementCreation('button', displayDiv, 'previous', 'previous', ['click', () => { display(current, recipes, 'back') }], ['type', 'button', 'style', 'grid-column:span 2;', 'class', 'onScreen'])
@@ -134,8 +134,8 @@ export class browseScreen {
                     recipesArr[i].remove()
                 }
                 for (let i = index; i < (index + 12); i++) {
-                    const recipe=arr[i]
-                    elementCreation('div', displayDiv, recipe.name, `${recipe.name}`, ['click', () => {manager.switchScreen('view',recipe)}], ['style', 'background:grey;', 'class', 'onScreen'])
+                    const Recipe=arr[i]
+                    elementCreation('div', displayDiv, Recipe.name, `${Recipe.name}`, ['click', () => {manager.switchScreen('view',Recipe)}], ['style', 'background:grey;', 'class', 'onScreen'])
                 }
                 current = index;
                 elementCreation('button', displayDiv, 'previous', 'previous', ['click', () => { display(current, recipes, 'back') }], ['type', 'button', 'style', 'grid-column:span 2;', 'class', 'onScreen'])
