@@ -27,5 +27,5 @@ manager.registerScreen('register', registerscreen)
 manager.registerScreen('browse',browsescreen)
 manager.registerScreen('view',viewscreen)
 
-manager.switchScreen('browse')
+manager.switchScreen('home')
 //this is supposed to be homescreen but since I am working on another screen I made it that. 
