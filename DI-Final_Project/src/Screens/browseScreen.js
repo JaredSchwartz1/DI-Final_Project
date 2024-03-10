@@ -37,7 +37,7 @@ export class browseScreen {
                     index += 12
                     for (let i = index; i < (arr.length); i++) {
                         const Recipe=arr[i]
-                    elementCreation('div', displayDiv, Recipe.name, `${recipe.name}`, ['click', () => {manager.switchScreen('view',recipe)}], ['style', 'background:grey;', 'class', 'onScreen'])
+                    elementCreation('div', displayDiv, Recipe.name, `${Recipe.name}`, ['click', () => {manager.switchScreen('view',recipe)}], ['style', 'background:grey;', 'class', 'onScreen'])
                     }
                     for (let i = (arr.length - index); i < 12; i++) {
                         elementCreation('div', displayDiv, null, null, null, ['class', 'holder','class','onScreen'])
