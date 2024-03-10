@@ -34,6 +34,10 @@ import {
     favoritesScreen
 } from './Screens/favoritesScreen.js'
 export const favoritesscreen = new favoritesScreen('favorites');
+import{
+    viewScreen
+}from './Screens/viewScreen.js'
+export const viewscreen=new viewScreen('view')
 
 import{
     Recipe

@@ -10,7 +10,7 @@ export class ScreenManager {
     }
 
     // Switch to a registered screen by name
-    switchScreen(name) {
+    switchScreen(name,params=null) {
         const newScreen = this.screens[name];
         if (newScreen) {
             if (this.currentScreen) {
