@@ -27,5 +27,4 @@ manager.registerScreen('register', registerscreen)
 manager.registerScreen('browse',browsescreen)
 manager.registerScreen('view',viewscreen)
 
-manager.switchScreen('home')
-//this is supposed to be homescreen but since I am working on another screen I made it that. 
+manager.switchScreen('home')//this was at first home.show() and that led to bugs.

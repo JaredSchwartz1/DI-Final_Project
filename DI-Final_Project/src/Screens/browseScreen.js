@@ -18,9 +18,9 @@ export class browseScreen {
         elementCreation('input', searchForm, null, 'nameSearch', null, ['type', 'text'])
         elementCreation('button', searchForm, 'Search')
         elementCreation('button',searchDiv,'reset',null,['click', () => {display(current,recipes)}],['type', 'button'])
-        elementCreation('button',searchDiv,'Advanced Search',null,['click', () => {}],['type', 'button'])
+        elementCreation('button',searchDiv,'Advanced Search',null,['click', () => {}],['type', 'button'])//I make the top section which has the buttons and the form.
 
-        let displayDiv = elementCreation('div', screenDiv, null, 'displayDiv')
+        let displayDiv = elementCreation('div', screenDiv, null, 'displayDiv')//this guy holds the grid of objects.
         let current = 0;
         display(current, recipes)
         function display(index, arr, direction = null) {
