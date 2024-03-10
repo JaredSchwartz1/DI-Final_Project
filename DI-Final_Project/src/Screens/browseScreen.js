@@ -17,6 +17,8 @@ export class browseScreen {
         elementCreation('label', searchForm, 'Search for a recipe', null, null, ['for', 'nameSearch'])
         elementCreation('input', searchForm, null, 'nameSearch', null, ['type', 'text'])
         elementCreation('button', searchForm, 'Search')
+        elementCreation('button',searchDiv,'reset',null,['click', () => {display(current,recipes)}],['type', 'button'])
+        elementCreation('button',searchDiv,'Advanced Search',null,['click', () => {}],['type', 'button'])
 
         let displayDiv = elementCreation('div', screenDiv, null, 'displayDiv')
         let current = 0;
@@ -28,33 +30,34 @@ export class browseScreen {
                     return;
                 }
                 else if (Math.min((arr.length - index), (index + 12)) == (arr.length - index)) {
+                    let recipesArr = document.getElementsByClassName('onScreen')
+                    for (let i = 0; i < recipesArr.length; i) {
+                        recipesArr[i].remove()
+                    }
                     index += 12
                     for (let i = index; i < (arr.length); i++) {
-                        document.getElementById(`${arr[((2 * index) - i - 1)].name}`).remove()
-                        elementCreation('div', displayDiv, arr[i].name, `${arr[i].name}`, ['click', () => { }], ['style', 'background:grey;', 'class', 'onScreen'])
+                        elementCreation('div', displayDiv, arr[i].name, `${arr[i].name}`, ['click', () => {}], ['style', 'background:grey;', 'class', 'onScreen'])
                     }
                     for (let i = (arr.length - index); i < 12; i++) {
-                        document.getElementById(`${arr[(index - i - 1)].name}`).remove()
-                        elementCreation('div', displayDiv, null, null, null, ['class', 'holder'])
+                        elementCreation('div', displayDiv, null, null, null, ['class', 'holder','class','onScreen'])
                     }
                     current = index;
-                    document.getElementById('previous').remove()
-                    document.getElementById('next').remove()
-                    elementCreation('button', displayDiv, 'previous', 'previous', ['click', () => { display(current, recipes, 'back') }], ['type', 'button', 'style', 'grid-column:span 2;'])
-                    elementCreation('button', displayDiv, 'next', 'next', ['click', () => { display(current, recipes, 'forward') }], ['type', 'button', 'style', 'grid-column:span 2;'])
+                    elementCreation('button', displayDiv, 'previous', 'previous', ['click', () => { display(current, recipes, 'back') }], ['type', 'button', 'style', 'grid-column:span 2;', 'class', 'onScreen'])
+                    elementCreation('button', displayDiv, 'next', 'next', ['click', () => { display(current, recipes, 'forward') }], ['type', 'button', 'style', 'grid-column:span 2;', 'class', 'onScreen'])
                 }
 
                 else {
+                    let recipesArr = document.getElementsByClassName('onScreen')
+                    for (let i = 0; i < recipesArr.length; i) {
+                        recipesArr[i].remove()
+                    }
                     index += 12
                     for (let i = index; i < (index + 12); i++) {
-                        document.getElementById(`${arr[i - 12].name}`).remove()
                         elementCreation('div', displayDiv, arr[i].name, `${arr[i].name}`, ['click', () => { }], ['style', 'background:grey;', 'class', 'onScreen'])
                     }
                     current = index;
-                    document.getElementById('previous').remove()
-                    document.getElementById('next').remove()
-                    elementCreation('button', displayDiv, 'previous', 'previous', ['click', () => { display(current, recipes, 'back') }], ['type', 'button', 'style', 'grid-column:span 2;'])
-                    elementCreation('button', displayDiv, 'next', 'next', ['click', () => { display(current, recipes, 'forward') }], ['type', 'button', 'style', 'grid-column:span 2;'])
+                    elementCreation('button', displayDiv, 'previous', 'previous', ['click', () => { display(current, recipes, 'back') }], ['type', 'button', 'style', 'grid-column:span 2;','class', 'onScreen'])
+                    elementCreation('button', displayDiv, 'next', 'next', ['click', () => { display(current, recipes, 'forward') }], ['type', 'button', 'style', 'grid-column:span 2;','class', 'onScreen'])
                 }
             }
             else if (direction == 'back') {
@@ -63,34 +66,30 @@ export class browseScreen {
                     return;
                 }
                 else if (index + 12 > arr.length) {
-                    let divArr = document.getElementsByClassName('holder')
-                    for (let i = 0; i < divArr.length; i) {
-                        divArr[i].remove()
-                    }
-                    for (let i = index; i < (arr.length); i++) {
-                        document.getElementById(`${arr[i].name}`).remove()
-                    }
-                    index -= 12
-                    for (let i = index; i < (index + 12); i++) {
-                        elementCreation('div', displayDiv, arr[i].name, `${arr[i].name}`, ['click', () => { }], ['style', 'background:grey;', 'class', 'onScreen'])//height:200px;width:200px;
-                    }
-                    current = index;
-                    document.getElementById('previous').remove()
-                    document.getElementById('next').remove()
-                    elementCreation('button', displayDiv, 'previous', 'previous', ['click', () => { display(current, recipes, 'back') }], ['type', 'button', 'style', 'grid-column:span 2;'])
-                    elementCreation('button', displayDiv, 'next', 'next', ['click', () => { display(current, recipes, 'forward') }], ['type', 'button', 'style', 'grid-column:span 2;'])
+                    let recipesArr = document.getElementsByClassName('onScreen')
+                for (let i = 0; i < recipesArr.length; i) {
+                    recipesArr[i].remove()
                 }
-                else {
                     index -= 12
                     for (let i = index; i < (index + 12); i++) {
-                        document.getElementById(`${arr[i + 12].name}`).remove()
                         elementCreation('div', displayDiv, arr[i].name, `${arr[i].name}`, ['click', () => { }], ['style', 'background:grey;', 'class', 'onScreen'])
                     }
                     current = index;
-                    document.getElementById('previous').remove()
-                    document.getElementById('next').remove()
-                    elementCreation('button', displayDiv, 'previous', 'previous', ['click', () => { display(current, recipes, 'back') }], ['type', 'button', 'style', 'grid-column:span 2;'])
-                    elementCreation('button', displayDiv, 'next', 'next', ['click', () => { display(current, recipes, 'forward') }], ['type', 'button', 'style', 'grid-column:span 2;'])
+                    elementCreation('button', displayDiv, 'previous', 'previous', ['click', () => { display(current, recipes, 'back') }], ['type', 'button', 'style', 'grid-column:span 2;', 'class', 'onScreen'])
+                    elementCreation('button', displayDiv, 'next', 'next', ['click', () => { display(current, recipes, 'forward') }], ['type', 'button', 'style', 'grid-column:span 2;', 'class', 'onScreen'])
+                }
+                else {
+                    let recipesArr = document.getElementsByClassName('onScreen')
+                for (let i = 0; i < recipesArr.length; i) {
+                    recipesArr[i].remove()
+                }
+                    index -= 12
+                    for (let i = index; i < (index + 12); i++) {
+                        elementCreation('div', displayDiv, arr[i].name, `${arr[i].name}`, ['click', () => { }], ['style', 'background:grey;', 'class', 'onScreen'])
+                    }
+                    current = index;
+                    elementCreation('button', displayDiv, 'previous', 'previous', ['click', () => { display(current, recipes, 'back') }], ['type', 'button', 'style', 'grid-column:span 2;', 'class', 'onScreen'])
+                    elementCreation('button', displayDiv, 'next', 'next', ['click', () => { display(current, recipes, 'forward') }], ['type', 'button', 'style', 'grid-column:span 2;', 'class', 'onScreen'])
                 }
             }
             else if (arr != recipes) {
@@ -98,36 +97,42 @@ export class browseScreen {
                 for (let i = 0; i < recipesArr.length; i) {
                     recipesArr[i].remove()
                 }
-                document.getElementById('previous').remove()
-                document.getElementById('next').remove()
                 if (Math.min((arr.length - index), (index + 12)) == (arr.length - index)) {
                     index += 12
                     for (let i = 0; i < (arr.length); i++) {
                         elementCreation('div', displayDiv, arr[i].name, `${arr[i].name}`, ['click', () => { }], ['style', 'background:grey;', 'class', 'onScreen'])
                     }
                     for (let i = arr.length; i < 12; i++) {
-                        elementCreation('div', displayDiv, null, null, null, ['class', 'holder'])
+                        elementCreation('div', displayDiv, null, null, null, ['class', 'holder','class','onScreen'])
                     }
                     current = index;
-                    elementCreation('button', displayDiv, 'previous', 'previous', ['click', () => { display(current, recipes, 'back') }], ['type', 'button', 'style', 'grid-column:span 2;'])
-                    elementCreation('button', displayDiv, 'next', 'next', ['click', () => { display(current, recipes, 'forward') }], ['type', 'button', 'style', 'grid-column:span 2;'])
+                    elementCreation('button', displayDiv, 'previous', 'previous', ['click', () => { display(current, recipes, 'back') }], ['type', 'button', 'style', 'grid-column:span 2;', 'class', 'onScreen'])
+                    elementCreation('button', displayDiv, 'next', 'next', ['click', () => { display(current, recipes, 'forward') }], ['type', 'button', 'style', 'grid-column:span 2;', 'class', 'onScreen'])
                 }
                 else {
+                    let recipesArr = document.getElementsByClassName('onScreen')
+                for (let i = 0; i < recipesArr.length; i) {
+                    recipesArr[i].remove()
+                }
                     for (let i = index; i < (index + 12); i++) {
                         elementCreation('div', displayDiv, arr[i].name, `${arr[i].name}`, ['click', () => { }], ['style', 'background:grey;', 'class', 'onScreen'])
                     }
                     current = index;
-                    elementCreation('button', displayDiv, 'previous', 'previous', ['click', () => { display(current, recipes, 'back') }], ['type', 'button', 'style', 'grid-column:span 2;'])
-                    elementCreation('button', displayDiv, 'next', 'next', ['click', () => { display(current, recipes, 'forward') }], ['type', 'button', 'style', 'grid-column:span 2;'])
+                    elementCreation('button', displayDiv, 'previous', 'previous', ['click', () => { display(current, recipes, 'back') }], ['type', 'button', 'style', 'grid-column:span 2;', 'class', 'onScreen'])
+                    elementCreation('button', displayDiv, 'next', 'next', ['click', () => { display(current, recipes, 'forward') }], ['type', 'button', 'style', 'grid-column:span 2;', 'class', 'onScreen'])
                 }
             }
             else {
+                let recipesArr = document.getElementsByClassName('onScreen')
+                for (let i = 0; i < recipesArr.length; i) {
+                    recipesArr[i].remove()
+                }
                 for (let i = index; i < (index + 12); i++) {
                     elementCreation('div', displayDiv, arr[i].name, `${arr[i].name}`, ['click', () => { }], ['style', 'background:grey;', 'class', 'onScreen'])
                 }
                 current = index;
-                elementCreation('button', displayDiv, 'previous', 'previous', ['click', () => { display(current, recipes, 'back') }], ['type', 'button', 'style', 'grid-column:span 2;'])
-                elementCreation('button', displayDiv, 'next', 'next', ['click', () => { display(current, recipes, 'forward') }], ['type', 'button', 'style', 'grid-column:span 2;'])
+                elementCreation('button', displayDiv, 'previous', 'previous', ['click', () => { display(current, recipes, 'back') }], ['type', 'button', 'style', 'grid-column:span 2;', 'class', 'onScreen'])
+                elementCreation('button', displayDiv, 'next', 'next', ['click', () => { display(current, recipes, 'forward') }], ['type', 'button', 'style', 'grid-column:span 2;', 'class', 'onScreen'])
             }
         }
         elementCreation('button', screenDiv, 'back', null, ['click', () => { manager.switchScreen('main') }], ['type', 'button'])
@@ -138,7 +143,7 @@ export class browseScreen {
                 alert('Missing search. Enter words to find recipes')
                 return;
             }
-            else if (nameSearch.value.indexOf(' ') != -1) {
+            else if (nameSearch.value.includes(' ') == true) {
                 alert('Can only search using a single word.')
             }
             else {
@@ -151,7 +156,7 @@ export class browseScreen {
                     filteredArray = arr.filter(wordSearchFiltering)
                 }
                 filteredArrayMaker(searchWord, recipes)
-                if (filteredArray != []) {
+                if (filteredArray.length!==0) {
                     display(current, filteredArray)
                 }
                 else {
